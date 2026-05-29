@@ -49,12 +49,12 @@ COMPTEUR DE VISITES
 -------------------
 Le site contient déjà le script GoatCounter.
 
-Pour que le compteur fonctionne, créer un compte GoatCounter avec le code :
+Le compteur utilise le code GoatCounter déjà créé :
 
-lesplumesdemetc
+paulo
 
 Statistiques :
-https://lesplumesdemetc.goatcounter.com
+https://paulo.goatcounter.com
 
 CONTACT AFFICHÉ
 ---------------
