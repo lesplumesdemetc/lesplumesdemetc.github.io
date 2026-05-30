@@ -17,3 +17,8 @@ Publication GitHub Pages :
 3. Cliquer sur “Commit changes”.
 4. Attendre quelques minutes.
 5. Recharger le site avec Ctrl + F5.
+
+
+MISE À JOUR DES DISPONIBILITÉS
+Le tableau des disponibilités est connecté à Google Sheets via le lien CSV publié.
+Pour modifier le tableau du site, modifiez simplement la Feuille 1 dans Google Sheets. La date affichée est automatiquement la date du jour où le site charge les données.

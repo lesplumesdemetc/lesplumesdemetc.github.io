@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "story.tag1": "Élevage familial",
       "story.tag2": "Paiement sur place",
       "story.tag3": "Contact par mail",
-      "story.caption": "Le visuel utilisé pour les commandes d’œufs fécondés.",
+      "story.caption": "Timbre utilisé pour authentifier nos commandes d’œufs fécondés.",
       "races.eyebrow": "Nos races",
       "races.heading": "Pékin & Faverolles",
       "races.intro": "Deux races décoratives, attachantes, et très appréciées dans une basse-cour familiale.",
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "eggs.caption2": "Faverolles avec ses poussins",
       "eggs.caption3": "Poussins Pékin d’environ 1 mois",
       "availability.eyebrow": "Tarifs et disponibilités",
-      "availability.heading": "Disponibilités actualisables",
+      "availability.heading": "Disponibilités",
       "availability.intro": "Les disponibilités changent selon la saison, les naissances et les sujets prêts au départ.",
       "availability.link": "Confirmer les disponibilités",
       "availability.table.product": "Produit",
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.eyebrow": "Cœuilly • Champigny-sur-Marne 94500",
       "hero.title1": "Ovos galados",
       "hero.title2": "Galinhas Pékin",
-      "hero.title3": "Galinhas Faverolles FR",
+      "hero.title3": "Faverolles FR",
       "hero.lead": "Criação familiar modesta na região de Paris, com aves criadas com cuidado num espaço calmo, limpo e natural.",
       "hero.button1": "Ver disponibilidades",
       "hero.button2": "Contactar",
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "story.tag1": "Criação familiar",
       "story.tag2": "Pagamento no local",
       "story.tag3": "Contacto por e-mail",
-      "story.caption": "O visual utilizado para as encomendas de ovos galados.",
+      "story.caption": "Carimbo utilizado para autenticar as nossas encomendas de ovos galados.",
       "races.eyebrow": "As nossas raças",
       "races.heading": "Pékin & Faverolles",
       "races.intro": "Duas raças decorativas, cativantes e muito apreciadas numa capoeira familiar.",
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "eggs.caption2": "Faverolles com os seus pintainhos",
       "eggs.caption3": "Pintainhos Pékin com cerca de 1 mês",
       "availability.eyebrow": "Tarifas e disponibilidades",
-      "availability.heading": "Disponibilidades atualizáveis",
+      "availability.heading": "Disponibilidades",
       "availability.intro": "As disponibilidades mudam conforme a época, os nascimentos e os exemplares prontos para sair.",
       "availability.link": "Confirmar disponibilidades",
       "availability.table.product": "Produto",
@@ -210,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const availabilityLink = document.querySelector('.availability-mail-link');
   const langButtons = document.querySelectorAll('.lang-btn');
   const storageKey = 'les-plumes-lang';
+  const googleSheetsCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTOZ2wnheRMN90L8EB11IU64iP5xhlZJYQVJfXeJEds5ZLXTmv5Ly73xDoWemhwlhogcSN5zcIqSvXj/pub?gid=0&single=true&output=csv';
 
   function translate(key, lang) {
     return translations[lang]?.[key] ?? translations.fr[key] ?? key;
@@ -231,12 +232,75 @@ document.addEventListener("DOMContentLoaded", () => {
     return 'confirmer';
   }
 
+  function currentDateForLang(lang) {
+    return new Intl.DateTimeFormat(lang === 'pt' ? 'pt-PT' : 'fr-FR').format(new Date());
+  }
+
+  function parseCsv(text) {
+    const rows = [];
+    let row = [];
+    let cell = '';
+    let inQuotes = false;
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      const next = text[i + 1];
+      if (char === '"' && inQuotes && next === '"') {
+        cell += '"';
+        i++;
+      } else if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        row.push(cell.trim());
+        cell = '';
+      } else if ((char === '\n' || char === '\r') && !inQuotes) {
+        if (char === '\r' && next === '\n') i++;
+        row.push(cell.trim());
+        if (row.some((value) => value !== '')) rows.push(row);
+        row = [];
+        cell = '';
+      } else {
+        cell += char;
+      }
+    }
+    row.push(cell.trim());
+    if (row.some((value) => value !== '')) rows.push(row);
+    return rows;
+  }
+
+  function csvRowsToAvailability(rows) {
+    if (!rows || rows.length < 2) return [];
+    const headers = rows[0].map((h) => h.trim().toLowerCase());
+    return rows.slice(1).map((row) => {
+      const data = {};
+      headers.forEach((header, index) => { data[header] = row[index] || ''; });
+      return {
+        produit: { fr: data.produit_fr || data.produit || '', pt: data.produit_pt || data.produto_pt || data.produto || '' },
+        prix: data.prix || data.preco || data['preço'] || '',
+        statut: { fr: data.statut_fr || data.statut || '', pt: data.statut_pt || data.estado_pt || data.estado || '' }
+      };
+    }).filter((item) => item.produit.fr || item.produit.pt);
+  }
+
+  async function loadAvailabilityFromGoogleSheets() {
+    try {
+      const response = await fetch(googleSheetsCsvUrl, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Google Sheets non accessible');
+      const csvText = await response.text();
+      const lignes = csvRowsToAvailability(parseCsv(csvText));
+      if (lignes.length) {
+        window.disponibilitesConfig = { lignes };
+      }
+    } catch (error) {
+      console.warn('Disponibilités Google Sheets non chargées, utilisation du tableau local.', error);
+    }
+  }
+
   function renderAvailability(lang) {
     if (!window.disponibilitesConfig || !tbody) return;
     const config = window.disponibilitesConfig;
     tbody.innerHTML = '';
-    if (update && config.derniereMiseAJour) {
-      update.textContent = translate('availability.updated', lang).replace('{date}', config.derniereMiseAJour);
+    if (update) {
+      update.textContent = translate('availability.updated', lang).replace('{date}', currentDateForLang(lang));
     }
     config.lignes.forEach((item) => {
       const tr = document.createElement('tr');
@@ -334,5 +398,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   lightboxClose?.addEventListener('click', closeLightbox);
 
-  applyTranslations(initialLang === 'pt' ? 'pt' : 'fr');
+  const activeLang = initialLang === 'pt' ? 'pt' : 'fr';
+  loadAvailabilityFromGoogleSheets().finally(() => applyTranslations(activeLang));
 });
