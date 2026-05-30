@@ -39,6 +39,12 @@
     </nav>
   </header>
 
+  <div class="chicks-layer" aria-hidden="true">
+    <img class="chick chick-one" src="assets/icons/chick.svg" alt="">
+    <img class="chick chick-two" src="assets/icons/chick.svg" alt="">
+    <img class="chick chick-three" src="assets/icons/chick.svg" alt="">
+  </div>
+
   <main id="contenu">
     <section id="accueil" class="hero">
       <div class="hero-bg" role="img" aria-label="Espace de basse-cour familial avec poulailler"></div>
@@ -186,6 +192,7 @@
       <div class="section-heading">
         <p class="eyebrow">Galerie</p>
         <h2>Quelques images de notre basse-cour</h2>
+        <p>Cliquez sur une photo pour l’agrandir et voir les détails.</p>
       </div>
 
       <div class="gallery">
@@ -257,6 +264,13 @@
       </div>
     </section>
   </main>
+
+
+    <div class="lightbox" id="photo-lightbox" aria-hidden="true" role="dialog" aria-label="Photo agrandie">
+    <button class="lightbox-close" type="button" aria-label="Fermer la photo agrandie">×</button>
+    <img class="lightbox-image" src="" alt="">
+    <p class="lightbox-caption"></p>
+  </div>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Les Plumes de M & C — Basse-cour familiale à Champigny-sur-Marne.</p>

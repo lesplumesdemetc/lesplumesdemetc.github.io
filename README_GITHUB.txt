@@ -63,3 +63,26 @@ Localisation : Quartier de Cœuilly, Champigny-sur-Marne 94500
 
 Aucune adresse précise n’est affichée.
 Aucun paiement en ligne n’est prévu.
+
+
+AGRANDIR LES PHOTOS
+-------------------
+Les photos de la galerie, des races et des blocs visuels s’agrandissent maintenant au clic.
+Pour fermer l’image agrandie :
+- cliquer sur la croix
+- cliquer autour de l’image
+- appuyer sur la touche Échap
+
+
+NOUVEAUTÉS VISUELLES
+--------------------
+- Les photos s’agrandissent au clic.
+- La souris utilise un petit curseur en forme d’œuf.
+- Des petits poussins animés traversent discrètement le bas de la page.
+
+Pour que les modifications apparaissent sur GitHub Pages :
+1. Décompresser le ZIP.
+2. Envoyer tout le contenu décompressé dans GitHub.
+3. Cliquer sur "Commit changes".
+4. Attendre quelques minutes.
+5. Recharger le site avec Ctrl + F5 si l’ancienne version reste affichée.

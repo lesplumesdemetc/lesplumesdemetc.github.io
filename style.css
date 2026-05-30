@@ -770,3 +770,233 @@ tbody tr:last-child td {
     align-items: flex-start;
   }
 }
+
+
+/* Souris en forme d’œuf */
+html,
+body {
+  cursor: url("assets/icons/egg-cursor.png") 16 4, auto;
+}
+
+a,
+button,
+[tabindex],
+.gallery img,
+.race-card img,
+.photo-stack img,
+.stamp-card img {
+  cursor: url("assets/icons/egg-cursor.png") 16 4, pointer;
+}
+
+/* Photos cliquables */
+.gallery img,
+.race-card img,
+.photo-stack img,
+.stamp-card img {
+  cursor: zoom-in;
+}
+
+.gallery figure::after,
+.race-card::after,
+.stamp-card::after {
+  content: "Cliquer pour agrandir";
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 2;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--green-dark);
+  background: rgba(255, 255, 255, 0.88);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.gallery figure:hover::after,
+.race-card:hover::after,
+.stamp-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.race-card,
+.stamp-card {
+  position: relative;
+}
+
+/* Fenêtre photo agrandie */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(18, 27, 17, 0.90);
+  cursor: zoom-out;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-image {
+  max-width: min(96vw, 1400px);
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 22px;
+  background: var(--white);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  cursor: default;
+}
+
+.lightbox-caption {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  max-width: min(92vw, 900px);
+  margin: 0;
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: var(--green-dark);
+  background: rgba(255, 255, 255, 0.94);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 10000;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--green-dark);
+  background: var(--white);
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.24);
+}
+
+.lightbox-close:hover {
+  transform: scale(1.04);
+}
+
+/* Petits poussins animés en fond */
+.chicks-layer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 4;
+  height: 74px;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: .62;
+}
+
+.chick {
+  position: absolute;
+  bottom: 0;
+  width: 58px;
+  height: auto;
+  filter: drop-shadow(0 8px 12px rgba(20, 35, 17, .18));
+  animation-name: chick-walk;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.chick-one {
+  animation-duration: 38s;
+  animation-delay: 0s;
+}
+
+.chick-two {
+  width: 48px;
+  animation-duration: 44s;
+  animation-delay: -16s;
+  bottom: 7px;
+}
+
+.chick-three {
+  width: 42px;
+  animation-duration: 52s;
+  animation-delay: -29s;
+  bottom: 3px;
+}
+
+@keyframes chick-walk {
+  0% {
+    transform: translateX(-110px) translateY(0) scaleX(1);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-3px) scaleX(1);
+  }
+  50% {
+    transform: translateX(55vw) translateY(0) scaleX(1);
+  }
+  75% {
+    transform: translateX(82vw) translateY(-4px) scaleX(1);
+  }
+  100% {
+    transform: translateX(calc(100vw + 110px)) translateY(0) scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chick {
+    animation: none;
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery figure::after,
+  .race-card::after,
+  .stamp-card::after {
+    display: none;
+  }
+
+  .lightbox {
+    padding: 14px;
+  }
+
+  .lightbox-image {
+    max-width: 96vw;
+    max-height: 78vh;
+    border-radius: 16px;
+  }
+
+  .lightbox-caption {
+    bottom: 14px;
+    font-size: 12px;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .chicks-layer {
+    opacity: .45;
+    height: 58px;
+  }
+
+  .chick {
+    width: 44px;
+  }
+}
