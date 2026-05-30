@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "races.faverolles.title": "Faverolles",
       "races.faverolles.text": "La Faverolles est une belle race traditionnelle, reconnaissable à sa barbe, son plumage généreux et son allure rustique. Elle pond environ 150 à 200 œufs par an. Elle est aussi très reconnue pour la qualité de sa viande, appréciée jusque dans le monde de la cuisine et des chefs.",
       "eggs.eyebrow": "Œufs fécondés",
-      "eggs.heading": "Des œufs fécondés liés aux naissances",
+      "eggs.heading": "Des œufs fécondés de pure race",
       "eggs.text1": "Les œufs fécondés sont proposés selon la ponte, la saison et la disponibilité des reproducteurs. Ils sont préparés avec soin pour un retrait sur place après échange par mail.",
       "eggs.text2": "Le résultat d’incubation dépend ensuite de plusieurs éléments : durée de conservation, transport, couveuse, température, humidité et retournement des œufs.",
       "eggs.priceLabel": "Prix :",
