@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Les Plumes de M & C | Poules Pékin, Faverolles françaises & œufs fécondés</title>
-  <meta name="description" content="Petit élevage familial à Champigny-sur-Marne, quartier de Cœuilly : poules Pékin, Faverolles françaises, poussins et œufs fécondés. Contact par mail, paiement sur place.">
+  <title>Les Plumes de M & C | Œufs fécondés, poules Pékin et Faverolles</title>
+  <meta name="description" content="Petit élevage familial à Champigny-sur-Marne : œufs fécondés, poules Pékin, Faverolles, poussins et renseignements par mail.">
   <meta name="theme-color" content="#315b36">
   <meta property="og:title" content="Les Plumes de M & C">
-  <meta property="og:description" content="Poules Pékin, Faverolles françaises, poussins et œufs fécondés à Champigny-sur-Marne.">
+  <meta property="og:description" content="Œufs fécondés, poules Pékin et Faverolles à Champigny-sur-Marne.">
   <meta property="og:image" content="assets/img/aperçu-partage.jpg">
   <link rel="icon" href="assets/icons/favicon.png">
   <link rel="apple-touch-icon" href="assets/icons/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
@@ -21,109 +20,92 @@
     <a class="brand" href="#accueil" aria-label="Retour à l’accueil">
       <span class="brand-mark">M&C</span>
       <span>
-        <strong>Les Plumes de M & C</strong>
-        <em>Basse-cour familiale</em>
+        <strong data-i18n="brand.title">Les Plumes de M & C</strong>
+        <em data-i18n="brand.subtitle">Basse-cour familiale</em>
       </span>
     </a>
 
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation">
-      Menu
-    </button>
+    <div class="header-tools">
+      <nav id="navigation" class="site-nav" aria-label="Navigation principale">
+        <a href="#races" data-i18n="nav.races">Nos races</a>
+        <a href="#oeufs" data-i18n="nav.eggs">Œufs fécondés</a>
+        <a href="#disponibilites" data-i18n="nav.availability">Disponibilités</a>
+        <a href="#galerie" data-i18n="nav.gallery">Galerie</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
 
-    <nav id="navigation" class="site-nav" aria-label="Navigation principale">
-      <a href="#races">Nos races</a>
-      <a href="#oeufs">Œufs fécondés</a>
-      <a href="#disponibilites">Disponibilités</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <div class="language-switcher" aria-label="Choix de la langue">
+        <button class="lang-btn active" type="button" data-lang="fr" aria-pressed="true">🇫🇷 FR</button>
+        <button class="lang-btn" type="button" data-lang="pt" aria-pressed="false">🇵🇹 PT</button>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
   </header>
-
-  <div class="chicks-layer" aria-hidden="true">
-    <img class="chick chick-one" src="assets/icons/chick.svg" alt="">
-    <img class="chick chick-two" src="assets/icons/chick.svg" alt="">
-    <img class="chick chick-three" src="assets/icons/chick.svg" alt="">
-  </div>
 
   <main id="contenu">
     <section id="accueil" class="hero">
       <div class="hero-bg" role="img" aria-label="Espace de basse-cour familial avec poulailler"></div>
       <div class="hero-overlay"></div>
-
       <div class="hero-content">
-        <p class="eyebrow">Quartier de Cœuilly • Champigny-sur-Marne 94500</p>
-        <h1>Poules Pékin, Faverolles françaises et œufs fécondés</h1>
-        <p class="lead">
-          Petit élevage familial en région parisienne, avec des sujets élevés avec soin dans un espace calme, propre et naturel.
-        </p>
-
+        <p class="eyebrow" data-i18n="hero.eyebrow">Quartier de Cœuilly • Champigny-sur-Marne 94500</p>
+        <h1>
+          <span data-i18n="hero.title1">Œufs fécondés</span>
+          <span data-i18n="hero.title2">Poules Pékin</span>
+          <span data-i18n="hero.title3">Poules Faverolles FR</span>
+        </h1>
+        <p class="lead" data-i18n="hero.lead">Petit élevage familial en région parisienne, avec des sujets élevés avec soin dans un espace calme, propre et naturel.</p>
         <div class="hero-actions">
-          <a class="button" href="#disponibilites">Voir les disponibilités</a>
-          <a class="button button-light" href="mailto:Pauloedgar21@free.fr?subject=Demande%20de%20renseignements%20-%20Les%20Plumes%20de%20M%20%26%20C">Nous contacter</a>
+          <a class="button" href="#disponibilites" data-i18n="hero.button1">Voir les disponibilités</a>
+          <a class="button button-light contact-mail-link" href="mailto:Pauloedgar21@free.fr?subject=Demande%20de%20renseignements%20-%20Les%20Plumes%20de%20M%20%26%20C" data-i18n="hero.button2">Nous contacter</a>
         </div>
       </div>
     </section>
 
     <section class="section story">
       <div class="section-heading">
-        <p class="eyebrow">Notre histoire</p>
-        <h2>Un élevage simple, familial et suivi</h2>
+        <p class="eyebrow" data-i18n="story.eyebrow">Notre histoire</p>
+        <h2 data-i18n="story.heading">Un élevage simple, familial et suivi</h2>
       </div>
-
       <div class="story-grid">
         <div class="story-text">
-          <p>
-            Les Plumes de M & C est un petit espace de basse-cour né d’une passion familiale pour les poules d’ornement.
-            Le nom fait référence à nos enfants, sans afficher leur identité.
-          </p>
-          <p>
-            L’objectif est de proposer des œufs fécondés, poussins et sujets de basse-cour dans un cadre sérieux, à taille humaine,
-            avec un contact direct et un retrait uniquement sur rendez-vous.
-          </p>
-
+          <p data-i18n="story.p1">Les Plumes de M & C est né d’une première éclosion réalisée en famille, pour faire découvrir aux enfants comment naissent les poussins et leur apprendre, avec douceur, le respect du vivant, la patience et le sens des responsabilités. Ce moment éducatif s’est peu à peu transformé en une véritable passion familiale pour les poules d’ornement et la basse-cour.</p>
+          <p data-i18n="story.p2">Aujourd’hui, nous souhaitons à notre tour transmettre cette passion et ces valeurs à d’autres familles, en proposant des œufs fécondés, des poussins et des sujets de basse-cour élevés avec soin. Notre démarche reste volontairement familiale et à taille humaine, privilégiant les échanges directs, les conseils et le bien-être des animaux.</p>
+          <p data-i18n="story.p3">Le nom « Les Plumes de M & C » est lui aussi un clin d’œil à notre histoire familiale, puisqu’il reprend simplement les initiales de nos enfants, sans pour autant révéler leur identité.</p>
           <div class="trust-row" aria-label="Points importants">
-            <span>Élevage familial</span>
-            <span>Paiement sur place</span>
-            <span>Contact par mail</span>
+            <span data-i18n="story.tag1">Élevage familial</span>
+            <span data-i18n="story.tag2">Paiement sur place</span>
+            <span data-i18n="story.tag3">Contact par mail</span>
           </div>
         </div>
-
         <figure class="stamp-card">
           <img src="assets/img/logo-tampon.png" alt="Tampon Les Plumes de M & C - Œufs fécondés">
-          <figcaption>Le visuel utilisé pour les commandes d’œufs fécondés.</figcaption>
+          <figcaption data-i18n="story.caption">Le visuel utilisé pour les commandes d’œufs fécondés.</figcaption>
         </figure>
       </div>
     </section>
 
     <section id="races" class="section">
-      <div class="section-heading centered">
-        <p class="eyebrow">Nos races</p>
-        <h2>Pékin & Faverolles françaises</h2>
-        <p>Deux races décoratives, attachantes, et très appréciées dans une basse-cour familiale.</p>
+      <div class="section-heading centered races-heading">
+        <p class="eyebrow" data-i18n="races.eyebrow">Nos races</p>
+        <h2 data-i18n="races.heading">Pékin & Faverolles</h2>
+        <p data-i18n="races.intro">Deux races décoratives, attachantes, et très appréciées dans une basse-cour familiale.</p>
       </div>
-
       <div class="race-grid">
         <article class="race-card">
-          <img src="assets/img/pekin-mille-fleurs.jpg" alt="Poule Pékin mille-fleurs dans l’herbe" loading="lazy">
+          <img src="assets/img/race-pekin.jpg" alt="Couple de poules Pékin dans l’herbe" loading="lazy">
           <div class="race-content">
-            <p class="race-label">Race d’ornement</p>
-            <h3>Poule Pékin</h3>
-            <p>
-              La Pékin est une petite poule d’ornement appréciée pour sa silhouette ronde, ses pattes emplumées et son allure très décorative.
-              Elle plaît beaucoup aux familles qui recherchent une présence douce et agréable à observer.
-            </p>
+            <p class="race-label" data-i18n="races.pekin.label">Race d’ornement</p>
+            <h3 data-i18n="races.pekin.title">Pékin</h3>
+            <p data-i18n="races.pekin.text">La Pékin est une petite poule d’ornement appréciée pour sa silhouette ronde, ses pattes emplumées et son allure très décorative. Elle pond en général entre 100 et 150 œufs par an. C’est aussi une couveuse d’exception, réputée pour accepter très facilement des œufs d’autres races sous elle.</p>
           </div>
         </article>
-
         <article class="race-card featured">
-          <img src="assets/img/faverolles-couple.jpg" alt="Couple de Faverolles françaises dans l’herbe" loading="lazy">
+          <img src="assets/img/race-faverolles.jpg" alt="Couple de Faverolles dans l’herbe" loading="lazy">
           <div class="race-content">
-            <p class="race-label">Race française</p>
-            <h3>Faverolles françaises</h3>
-            <p>
-              La Faverolles française est une belle race traditionnelle, reconnaissable à sa barbe, son plumage généreux et son allure rustique.
-              Elle apporte du caractère à la basse-cour et intéresse les amateurs de races françaises.
-            </p>
+            <p class="race-label" data-i18n="races.faverolles.label">Race française</p>
+            <h3 data-i18n="races.faverolles.title">Faverolles</h3>
+            <p data-i18n="races.faverolles.text">La Faverolles est une belle race traditionnelle, reconnaissable à sa barbe, son plumage généreux et son allure rustique. Elle pond environ 150 à 200 œufs par an. Elle est aussi très reconnue pour la qualité de sa viande, appréciée jusque dans le monde de la cuisine et des chefs.</p>
           </div>
         </article>
       </div>
@@ -131,160 +113,141 @@
 
     <section id="oeufs" class="section split-section">
       <div class="split-text">
-        <p class="eyebrow">Œufs fécondés</p>
-        <h2>Œufs de Pékin et de Faverolles françaises</h2>
-        <p>
-          Les œufs fécondés sont proposés selon la ponte, la saison et la disponibilité des reproducteurs.
-          Ils sont préparés avec soin pour un retrait sur place.
-        </p>
-        <p class="note">
-          Le résultat d’incubation dépend ensuite de plusieurs éléments : durée de conservation, transport, couveuse, température,
-          humidité et retournement des œufs.
-        </p>
-
+        <p class="eyebrow" data-i18n="eggs.eyebrow">Œufs fécondés</p>
+        <h2 data-i18n="eggs.heading">Des œufs fécondés liés aux naissances</h2>
+        <p data-i18n="eggs.text1">Les œufs fécondés sont proposés selon la ponte, la saison et la disponibilité des reproducteurs. Ils sont préparés avec soin pour un retrait sur place après échange par mail.</p>
+        <p class="note" data-i18n="eggs.text2">Le résultat d’incubation dépend ensuite de plusieurs éléments : durée de conservation, transport, couveuse, température, humidité et retournement des œufs.</p>
         <ul class="clean-list">
-          <li><strong>Prix :</strong> 2 € l’unité</li>
-          <li><strong>Races :</strong> Pékin ou Faverolles françaises</li>
-          <li><strong>Réservation :</strong> par mail uniquement</li>
-          <li><strong>Paiement :</strong> sur place uniquement</li>
+          <li><strong data-i18n="eggs.priceLabel">Prix :</strong> <span data-i18n="eggs.priceValue">2 € l’unité</span></li>
+          <li><strong data-i18n="eggs.racesLabel">Races :</strong> <span data-i18n="eggs.racesValue">Pékin ou Faverolles</span></li>
+          <li><strong data-i18n="eggs.bookingLabel">Réservation :</strong> <span data-i18n="eggs.bookingValue">par mail uniquement</span></li>
+          <li><strong data-i18n="eggs.paymentLabel">Paiement :</strong> <span data-i18n="eggs.paymentValue">sur place uniquement</span></li>
         </ul>
       </div>
-
-      <div class="photo-stack" aria-label="Photos de poules">
-        <img class="photo-main" src="assets/img/pekin-poussins.jpg" alt="Poule avec poussins" loading="lazy">
-        <img class="photo-small" src="assets/img/faverolles-portrait.jpg" alt="Portrait de Faverolles française" loading="lazy">
+      <div class="eggs-photo-layout" aria-label="Photos de poules et poussins">
+        <figure class="eggs-photo large">
+          <img src="assets/img/eggs-pekin-maman.jpg" alt="Poule Pékin avec ses poussins" loading="lazy">
+          <figcaption data-i18n="eggs.caption1">Pékin avec ses poussins</figcaption>
+        </figure>
+        <figure class="eggs-photo large">
+          <img src="assets/img/eggs-faverolles-maman.jpg" alt="Faverolles avec ses poussins" loading="lazy">
+          <figcaption data-i18n="eggs.caption2">Faverolles avec ses poussins</figcaption>
+        </figure>
+        <figure class="eggs-photo small">
+          <img src="assets/img/eggs-poussins-1mois.jpg" alt="Poussins Pékin d’environ un mois" loading="lazy">
+          <figcaption data-i18n="eggs.caption3">Poussins Pékin d’environ 1 mois</figcaption>
+        </figure>
       </div>
     </section>
 
     <section id="disponibilites" class="section availability-section">
       <div class="section-heading centered">
-        <p class="eyebrow">Tarifs et disponibilités</p>
-        <h2>Disponibilités actualisables</h2>
-        <p>
-          Les disponibilités changent selon la saison, les naissances et les sujets prêts au départ.
-          Le tableau se modifie simplement dans le fichier <strong>disponibilites.js</strong>.
-        </p>
+        <p class="eyebrow" data-i18n="availability.eyebrow">Tarifs et disponibilités</p>
+        <h2 data-i18n="availability.heading">Disponibilités actualisables</h2>
+        <p data-i18n="availability.intro">Les disponibilités changent selon la saison, les naissances et les sujets prêts au départ.</p>
       </div>
-
       <div class="availability-meta">
-        <span id="last-update">Mise à jour : à renseigner</span>
-        <a href="mailto:Pauloedgar21@free.fr?subject=Demande%20de%20disponibilit%C3%A9s%20-%20Les%20Plumes%20de%20M%20%26%20C">Demander les disponibilités</a>
+        <span id="last-update">Mise à jour : 30/05/2026</span>
+        <a class="availability-mail-link" href="mailto:Pauloedgar21@free.fr?subject=Demande%20de%20disponibilit%C3%A9s%20-%20Les%20Plumes%20de%20M%20%26%20C" data-i18n="availability.link">Confirmer les disponibilités</a>
       </div>
-
       <div class="table-card">
         <table>
           <thead>
             <tr>
-              <th>Produit</th>
-              <th>Prix</th>
-              <th>Statut</th>
-              <th>Note</th>
+              <th data-i18n="availability.table.product">Produit</th>
+              <th data-i18n="availability.table.price">Prix</th>
+              <th data-i18n="availability.table.status">Statut</th>
             </tr>
           </thead>
           <tbody id="availability-body">
-            <tr><td colspan="4">Chargement des disponibilités…</td></tr>
+            <tr><td colspan="3" data-i18n="availability.loading">Chargement des disponibilités…</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="galerie" class="section gallery-section">
-      <div class="section-heading">
-        <p class="eyebrow">Galerie</p>
-        <h2>Quelques images de notre basse-cour</h2>
-        <p>Cliquez sur une photo pour l’agrandir et voir les détails.</p>
+      <div class="section-heading gallery-heading">
+        <p class="eyebrow gallery-kicker" data-i18n="gallery.eyebrow">Galerie</p>
+        <h2 class="gallery-title" data-i18n="gallery.heading">Quelques images de notre basse-cour</h2>
+        <p data-i18n="gallery.intro">Cliquez sur une photo pour l’agrandir et voir les détails.</p>
       </div>
-
       <div class="gallery">
         <figure class="wide">
-          <img src="assets/img/poulailler-card.jpg" alt="Espace de basse-cour avec poulailler" loading="lazy">
-          <figcaption>Notre espace de basse-cour</figcaption>
+          <img src="assets/img/gallery-poule-pekin-correct.jpg" alt="Poule Pékin" loading="lazy">
+          <figcaption data-i18n="gallery.caption1">Poule Pékin</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/faverolles-couple.jpg" alt="Couple de Faverolles françaises" loading="lazy">
-          <figcaption>Faverolles françaises</figcaption>
+          <img src="assets/img/gallery-poule-faverolles.jpg" alt="Poule Faverolles" loading="lazy">
+          <figcaption data-i18n="gallery.caption2">Poule Faverolles</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/pekin-gris.jpg" alt="Poule Pékin grise" loading="lazy">
-          <figcaption>Pékin grise</figcaption>
+          <img src="assets/img/gallery-jeune-coq-pekin.jpg" alt="Jeune coq Pékin" loading="lazy">
+          <figcaption data-i18n="gallery.caption3">Jeune Coq Pékin</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/faverolles-detail.jpg" alt="Détail d’une Faverolles française" loading="lazy">
-          <figcaption>Détail Faverolles</figcaption>
+          <img src="assets/img/galerie-poussin-gris.jpg" alt="Poussin Pékin gris" loading="lazy">
+          <figcaption data-i18n="gallery.caption4">Poussin Pékin gris</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/pekin-clair.jpg" alt="Poule Pékin claire" loading="lazy">
-          <figcaption>Pékin claire</figcaption>
+          <img src="assets/img/gallery-portrait-faverolles.jpg" alt="Portrait Faverolles" loading="lazy">
+          <figcaption data-i18n="gallery.caption5">Portrait Faverolles</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/faverolles-portrait.jpg" alt="Portrait de Faverolles française" loading="lazy">
-          <figcaption>Portrait Faverolles</figcaption>
+          <img src="assets/img/gallery-poule-soie-noire.jpg" alt="Poule Soie noire" loading="lazy">
+          <figcaption data-i18n="gallery.caption6">Poule Soie noire</figcaption>
         </figure>
       </div>
     </section>
 
     <section id="conseils" class="section advice-section">
       <div class="section-heading centered">
-        <p class="eyebrow">Avant achat</p>
-        <h2>Quelques conseils simples</h2>
+        <p class="eyebrow" data-i18n="tips.eyebrow">Avant achat</p>
+        <h2 data-i18n="tips.heading">Quelques conseils simples</h2>
       </div>
-
       <div class="advice-grid">
         <article>
-          <h3>Préparer l’accueil</h3>
-          <p>Prévoir un abri sec, un espace sécurisé, de l’eau propre, une alimentation adaptée et une protection contre les prédateurs.</p>
+          <h3 data-i18n="tips.card1.title">Préparer l’accueil</h3>
+          <p data-i18n="tips.card1.text">Prévoir un abri sec, un espace sécurisé, de l’eau propre, une alimentation adaptée et une protection contre les prédateurs.</p>
         </article>
-
         <article>
-          <h3>Anticiper l’entretien</h3>
-          <p>Une basse-cour demande un minimum de suivi : nettoyage, surveillance, alimentation régulière et espace suffisant.</p>
+          <h3 data-i18n="tips.card2.title">Anticiper l’entretien</h3>
+          <p data-i18n="tips.card2.text">Une basse-cour demande un minimum de suivi : nettoyage, surveillance, alimentation régulière et espace suffisant.</p>
         </article>
-
         <article>
-          <h3>Réserver simplement</h3>
-          <p>Un mail suffit pour demander les disponibilités du moment et organiser un retrait sur place.</p>
+          <h3 data-i18n="tips.card3.title">Réserver simplement</h3>
+          <p data-i18n="tips.card3.text">Un mail suffit pour demander les disponibilités du moment et organiser un retrait sur place.</p>
         </article>
       </div>
     </section>
 
     <section id="contact" class="section contact-section">
       <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Réservation et renseignements</h2>
-        <p>
-          Pour connaître les disponibilités actuelles ou réserver, envoyez simplement un mail.
-          L’adresse précise n’est pas affichée sur le site : le retrait se fait uniquement après échange.
-        </p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h2 data-i18n="contact.heading">Réservation et renseignements</h2>
+        <p data-i18n="contact.text">Pour connaître les disponibilités actuelles ou réserver, envoyez simplement un mail. Un échange préalable permet de confirmer les disponibilités avant tout passage sur place.</p>
       </div>
-
       <div class="contact-card">
-        <p><strong>Localisation</strong><br>Quartier de Cœuilly<br>Champigny-sur-Marne 94500</p>
-        <p><strong>Email</strong><br><a href="mailto:Pauloedgar21@free.fr?subject=Demande%20de%20renseignements%20-%20Les%20Plumes%20de%20M%20%26%20C">Pauloedgar21@free.fr</a></p>
-        <p><strong>Paiement</strong><br>Sur place uniquement</p>
+        <p><strong data-i18n="contact.locationLabel">Localisation</strong><br><span data-i18n="contact.location1">Quartier de Cœuilly</span><br><span data-i18n="contact.location2">Champigny-sur-Marne 94500</span></p>
+        <p><strong data-i18n="contact.emailLabel">Email</strong><br><a class="contact-mail-link" href="mailto:Pauloedgar21@free.fr?subject=Demande%20de%20renseignements%20-%20Les%20Plumes%20de%20M%20%26%20C">Pauloedgar21@free.fr</a></p>
+        <p class="payment-block"><strong data-i18n="contact.paymentLabel">Paiement</strong><br><span data-i18n="contact.paymentTextLine1">Espèces, Wero, PayPal</span><br><strong class="payment-emphasis" data-i18n="contact.paymentTextLine2">Paiement sur place UNIQUEMENT</strong></p>
       </div>
     </section>
   </main>
 
-
-    <div class="lightbox" id="photo-lightbox" aria-hidden="true" role="dialog" aria-label="Photo agrandie">
+  <div class="lightbox" id="photo-lightbox" aria-hidden="true" role="dialog" aria-label="Photo agrandie">
     <button class="lightbox-close" type="button" aria-label="Fermer la photo agrandie">×</button>
     <img class="lightbox-image" src="" alt="">
     <p class="lightbox-caption"></p>
   </div>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Les Plumes de M & C — Basse-cour familiale à Champigny-sur-Marne.</p>
-    <a href="#top">Retour en haut</a>
+    <p id="footer-text">© <span id="year"></span> Les Plumes de M & C — Basse-cour familiale à Champigny-sur-Marne.</p>
+    <a href="#top" data-i18n="footer.backToTop">Retour en haut</a>
   </footer>
 
   <script src="disponibilites.js"></script>
   <script src="script.js"></script>
-
-  <!--
-    Compteur de visites : GoatCounter.
-    Compteur activé avec le code GoatCounter : paulo.
-    Statistiques : https://paulo.goatcounter.com
-  -->
   <script data-goatcounter="https://paulo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
