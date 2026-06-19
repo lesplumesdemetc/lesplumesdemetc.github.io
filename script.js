@@ -317,8 +317,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const cells = [
         item.produit?.[lang] || item.produit?.fr || '',
         item.prix || '',
-        item.detail?.[lang] || item.detail?.fr || item.note?.[lang] || item.note?.fr || '',
-        status
+        status,
+        item.detail?.[lang] || item.detail?.fr || item.note?.[lang] || item.note?.fr || ''
       ];
       cells.forEach((value) => {
         const td = document.createElement('td');
