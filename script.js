@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "availability.link": "Confirmer les disponibilités",
       "availability.table.product": "Produit",
       "availability.table.price": "Prix",
+      "availability.table.detail": "Détail",
       "availability.table.status": "Statut",
       "availability.loading": "Chargement des disponibilités…",
       "gallery.eyebrow": "Galerie",
@@ -64,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "gallery.caption3": "Jeune Coq Pékin",
       "gallery.caption4": "Poussin Pékin gris",
       "gallery.caption5": "Portrait Faverolles",
-      "gallery.caption6": "Poule Soie noire",
+      "gallery.caption6": "Coq Soie noir",
       "tips.eyebrow": "Avant achat",
       "tips.heading": "Quelques conseils simples",
       "tips.card1.title": "Préparer l’accueil",
@@ -145,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "availability.link": "Confirmar disponibilidades",
       "availability.table.product": "Produto",
       "availability.table.price": "Preço",
+      "availability.table.detail": "Detalhe",
       "availability.table.status": "Estado",
       "availability.loading": "A carregar disponibilidades…",
       "gallery.eyebrow": "Galeria",
@@ -155,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "gallery.caption3": "Jovem galo Pékin",
       "gallery.caption4": "Pintainho Pékin cinzento",
       "gallery.caption5": "Detalhe da barba Faverolles",
-      "gallery.caption6": "Galinha de Seda preta",
+      "gallery.caption6": "Galo de Seda preto",
       "tips.eyebrow": "Antes da compra",
       "tips.heading": "Alguns conselhos simples",
       "tips.card1.title": "Preparar a chegada",
@@ -276,6 +278,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return {
         produit: { fr: data.produit_fr || data.produit || '', pt: data.produit_pt || data.produto_pt || data.produto || '' },
         prix: data.prix || data.preco || data['preço'] || '',
+        detail: {
+          fr: data.detail_fr || data['détail_fr'] || data.detail || data['détail'] || '',
+          pt: data.detail_pt || data.detalhe_pt || data.detalhe || ''
+        },
         statut: { fr: data.statut_fr || data.statut || '', pt: data.statut_pt || data.estado_pt || data.estado || '' }
       };
     }).filter((item) => item.produit.fr || item.produit.pt);
@@ -311,6 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const cells = [
         item.produit?.[lang] || item.produit?.fr || '',
         item.prix || '',
+        item.detail?.[lang] || item.detail?.fr || item.note?.[lang] || item.note?.fr || '',
         status
       ];
       cells.forEach((value) => {
