@@ -145,7 +145,7 @@ h3 { color: var(--green-dark); font-size: 28px; }
   width: 100%; max-width: 360px; margin: 0 auto 16px; border-radius: 24px; background: #fff;
 }
 .stamp-card figcaption { color: var(--muted); text-align: center; }
-.race-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+.race-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
 .race-card { overflow: hidden; }
 .race-card img { width: 100%; height: 330px; object-fit: cover; }
 .race-content { padding: 28px; }
@@ -167,7 +167,7 @@ h3 { color: var(--green-dark); font-size: 28px; }
   margin: 0; overflow: hidden; border-radius: 24px; border: 1px solid var(--border); background: #fff; box-shadow: var(--shadow);
 }
 .eggs-photo img { width: 100%; height: 100%; object-fit: cover; }
-.eggs-photo.large { min-height: 430px; }
+.eggs-photo.large { min-height: 360px; }
 .eggs-photo.small { grid-column: 1 / -1; max-width: 240px; justify-self: center; }
 .eggs-photo.small img { height: 260px; }
 .eggs-photo figcaption {
@@ -196,6 +196,7 @@ tr:last-child td { border-bottom: 0; }
 }
 .gallery figure.wide { grid-column: span 2; }
 .gallery img { width: 100%; height: 300px; object-fit: cover; }
+.gallery figure.show-full img { height: 360px; object-fit: contain; object-position: center; background: #f7f2e9; }
 .gallery figcaption {
   padding: 12px 14px; font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 700; color: var(--green-dark);
 }
@@ -387,4 +388,170 @@ tr:last-child td { border-bottom: 0; }
   .eggs-photo.small img { height: 230px; }
   .hatching-egg { width: 58px; height: 74px; }
   .chick-head { width: 28px; height: 22px; }
+}
+
+@media (max-width: 1050px) and (min-width: 761px) {
+  .race-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .race-grid .race-card:last-child { grid-column: 1 / -1; max-width: 620px; justify-self: center; }
+}
+
+
+/* Ajustements d’affichage des photos — août 2026 */
+.eggs-photo.large {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.eggs-photo.large img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  object-position: center;
+  background: #f7f2e9;
+}
+.eggs-photo figcaption {
+  text-align: center;
+}
+.gallery figure,
+.gallery figure.wide {
+  grid-column: auto;
+}
+.gallery img,
+.gallery figure.show-full img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  background: #f7f2e9;
+}
+.gallery figcaption {
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .eggs-photo.large img { height: 300px; }
+}
+
+
+/* Ordre final et miniatures uniformes — août 2026 */
+.eggs-photo-layout {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+.eggs-photo.large {
+  height: 390px;
+}
+.eggs-photo.large img {
+  height: 320px;
+  flex: 0 0 320px;
+  object-fit: cover;
+  object-position: center;
+  background: #f7f2e9;
+}
+.eggs-photo.large figcaption {
+  min-height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.eggs-photo-young {
+  grid-column: 2;
+}
+@media (max-width: 1050px) {
+  .eggs-photo-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eggs-photo-young { grid-column: auto; }
+}
+@media (max-width: 720px) {
+  .eggs-photo-layout { grid-template-columns: 1fr; }
+  .eggs-photo.large { height: auto; }
+  .eggs-photo.large img { height: 280px; flex-basis: 280px; }
+}
+
+/* Section œufs fécondés : 2 x 2, photos complètes et miniatures uniformes */
+.eggs-photo-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.eggs-photo.large,
+.eggs-photo-young {
+  grid-column: auto;
+  height: 410px;
+}
+.eggs-photo.large img,
+.eggs-photo-young img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  flex: 0 0 330px;
+  object-fit: contain;
+  object-position: center;
+  background: #f7f2e9;
+}
+.eggs-photo.large figcaption,
+.eggs-photo-young figcaption {
+  min-height: 79px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .eggs-photo-layout { grid-template-columns: 1fr; }
+  .eggs-photo.large,
+  .eggs-photo-young { height: auto; }
+  .eggs-photo.large img,
+  .eggs-photo-young img { height: 280px; flex-basis: 280px; }
+}
+
+
+/* Finitions photos : miniatures uniformes et sujets entièrement visibles */
+.eggs-photo.large,
+.eggs-photo-young {
+  height: auto;
+}
+.eggs-photo.large img,
+.eggs-photo-young img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  flex: none;
+  object-fit: cover;
+  object-position: center;
+  background: #f7f2e9;
+}
+.eggs-photo.large figcaption,
+.eggs-photo-young figcaption {
+  min-height: 68px;
+}
+.race-card.featured img {
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 720px) {
+  .eggs-photo.large img,
+  .eggs-photo-young img {
+    height: auto;
+    flex-basis: auto;
+  }
+}
+
+/* Version finale photos validées — conservation stricte des proportions */
+.race-card img,
+.eggs-photo img,
+.gallery img {
+  filter: none !important;
+  transform: none;
+}
+.race-card img,
+.eggs-photo.large img,
+.eggs-photo-young img {
+  object-fit: cover;
+  object-position: center;
+}
+.gallery img,
+.gallery figure.show-full img {
+  object-fit: cover;
+  object-position: center;
 }
