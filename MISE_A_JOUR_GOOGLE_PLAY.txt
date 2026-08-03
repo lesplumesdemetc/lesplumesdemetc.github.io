@@ -1,0 +1,25 @@
+MISE À JOUR DU SITE — POLITIQUE DE CONFIDENTIALITÉ GOOGLE PLAY
+
+Ce dossier contient le site complet, prêt à remplacer l’ancienne version sur GitHub.
+
+Nouveautés :
+- page publique bilingue de politique de confidentialité ;
+- lien « Politique de confidentialité » ajouté dans le pied de page ;
+- sitemap mis à jour ;
+- description du formulaire Android, de Google Sheets, GitHub Pages et GoatCounter ;
+- procédure de contact pour l’accès ou la suppression des données.
+
+Adresse à utiliser plus tard dans Google Play Console :
+https://lesplumesdemetc.github.io/politique-confidentialite.html
+
+MISE EN LIGNE
+1. Décompresser le ZIP.
+2. Ouvrir le dossier du site.
+3. Dans le dépôt GitHub du SITE INTERNET, utiliser Add file > Upload files.
+4. Envoyer tout le contenu du dossier décompressé, pas le ZIP.
+5. Valider avec Commit changes.
+6. Après quelques minutes, vérifier les deux adresses :
+   https://lesplumesdemetc.github.io/
+   https://lesplumesdemetc.github.io/politique-confidentialite.html
+
+Attention : ne pas envoyer ces fichiers dans le dépôt Android « les-plumes-android ».
