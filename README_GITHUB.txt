@@ -1,7 +1,6 @@
 LES PLUMES DE M & C — VERSION CORRIGÉE
 
 Contenu de cette version :
-- logo officiel mis à jour dans l’en-tête, la section histoire, le favicon et l’aperçu de partage
 - site bilingue français / portugais du Portugal
 - portugais corrigé avec “ovos galados”
 - section histoire reformulée autour de l’éclosion éducative et de la responsabilisation des enfants
@@ -23,3 +22,7 @@ Publication GitHub Pages :
 MISE À JOUR DES DISPONIBILITÉS
 Le tableau des disponibilités est connecté à Google Sheets via le lien CSV publié.
 Pour modifier le tableau du site, modifiez simplement la Feuille 1 dans Google Sheets. La date affichée est automatiquement la date du jour où le site charge les données.
+
+LOGOS DE CETTE VERSION
+- assets/img/logo-principal.png : nouveau logo affiché uniquement en haut à gauche du site.
+- assets/img/logo-tampon.png : ancien visuel du timbre conservé dans la section « Notre histoire » et pour les commandes d’œufs fécondés.
