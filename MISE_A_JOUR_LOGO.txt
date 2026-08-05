@@ -1,0 +1,10 @@
+MISE À JOUR DU LOGO — 5 AOÛT 2026
+
+Le nouveau logo a été intégré :
+- dans l’en-tête du site ;
+- dans la section « Notre histoire » ;
+- sur la page de politique de confidentialité ;
+- comme favicon ;
+- comme image d’aperçu lors du partage du site.
+
+Pour publier : envoyez tout le contenu de ce dossier à la racine du dépôt GitHub Pages, puis validez les changements.

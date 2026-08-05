@@ -1,6 +1,7 @@
 LES PLUMES DE M & C — VERSION CORRIGÉE
 
 Contenu de cette version :
+- logo officiel mis à jour dans l’en-tête, la section histoire, le favicon et l’aperçu de partage
 - site bilingue français / portugais du Portugal
 - portugais corrigé avec “ovos galados”
 - section histoire reformulée autour de l’éclosion éducative et de la responsabilisation des enfants
