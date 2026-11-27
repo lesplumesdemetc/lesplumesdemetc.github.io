@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "app.heading": "Notre application est disponible !",
       "app.description": "Notre aventure familiale continue sur votre smartphone ! Retrouvez nos disponibilités, nos conseils, notre galerie et notre boutique dans l’application officielle Les Plumes de M & C.",
       "app.note": "En français et en portugais, sans publicité ni compte utilisateur.",
-      "app.download": "Télécharger sur",
+      "app.scan": "Scannez avec votre téléphone pour télécharger l’application.",
       "footer.app": "Application Android",
       "brand.title": "Les Plumes de M & C",
       "brand.subtitle": "Basse-cour familiale",
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "app.heading": "A nossa aplicação já está disponível!",
       "app.description": "A nossa aventura familiar continua no seu smartphone! Consulte as nossas disponibilidades, os nossos conselhos, a galeria e a loja na aplicação oficial Les Plumes de M & C.",
       "app.note": "Em francês e português, sem publicidade nem conta de utilizador.",
-      "app.download": "Descarregar no",
+      "app.scan": "Leia o código com o seu telemóvel para descarregar a aplicação.",
       "footer.app": "Aplicação Android",
       "brand.title": "Les Plumes de M & C",
       "brand.subtitle": "Criação familiar",
@@ -374,6 +374,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyTranslations(lang) {
     document.documentElement.lang = lang;
+    const playBadge = document.querySelector('.app-play-badge');
+    if (playBadge) {
+      playBadge.src = lang === 'pt' ? 'https://play.google.com/intl/en_us/badges/static/images/badges/pt_badge_web_generic.png' : 'https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png';
+      playBadge.alt = lang === 'pt' ? 'Obter no Google Play' : 'Disponible sur Google Play';
+    }
+    const appQr = document.querySelector('.app-qr-image');
+    if (appQr) appQr.alt = lang === 'pt' ? 'Código QR para a página Google Play da nossa aplicação' : 'QR code vers la page Google Play de notre application';
     document.querySelectorAll('.app-download, [data-i18n="footer.app"]').forEach((link) => {
       const url = new URL(link.href);
       url.searchParams.set('hl', lang === 'pt' ? 'pt-PT' : 'fr');
@@ -453,5 +460,6 @@ document.addEventListener("DOMContentLoaded", () => {
   lightboxClose?.addEventListener('click', closeLightbox);
 
   const activeLang = initialLang === 'pt' ? 'pt' : 'fr';
-  loadAvailabilityFromGoogleSheets().finally(() => applyTranslations(activeLang));
+  applyTranslations(activeLang);
+  loadAvailabilityFromGoogleSheets().finally(() => renderAvailability(document.documentElement.lang));
 });
