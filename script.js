@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const translations = {
     fr: {
+      "nav.app": "Application",
+      "app.eyebrow": "Grande nouvelle • Application Android",
+      "app.heading": "Notre application est disponible !",
+      "app.description": "Notre aventure familiale continue sur votre smartphone ! Retrouvez nos disponibilités, nos conseils, notre galerie et notre boutique dans l’application officielle Les Plumes de M & C.",
+      "app.note": "En français et en portugais, sans publicité ni compte utilisateur.",
+      "app.download": "Télécharger sur",
+      "footer.app": "Application Android",
       "brand.title": "Les Plumes de M & C",
       "brand.subtitle": "Basse-cour familiale",
       "nav.races": "Nos races",
@@ -107,6 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "lightbox.title": "Cliquer pour agrandir"
     },
     pt: {
+      "nav.app": "Aplicação",
+      "app.eyebrow": "Grande novidade • Aplicação Android",
+      "app.heading": "A nossa aplicação já está disponível!",
+      "app.description": "A nossa aventura familiar continua no seu smartphone! Consulte as nossas disponibilidades, os nossos conselhos, a galeria e a loja na aplicação oficial Les Plumes de M & C.",
+      "app.note": "Em francês e português, sem publicidade nem conta de utilizador.",
+      "app.download": "Descarregar no",
+      "footer.app": "Aplicação Android",
       "brand.title": "Les Plumes de M & C",
       "brand.subtitle": "Criação familiar",
       "nav.races": "As nossas raças",
@@ -360,6 +374,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyTranslations(lang) {
     document.documentElement.lang = lang;
+    document.querySelectorAll('.app-download, [data-i18n="footer.app"]').forEach((link) => {
+      const url = new URL(link.href);
+      url.searchParams.set('hl', lang === 'pt' ? 'pt-PT' : 'fr');
+      link.href = url.toString();
+    });
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.dataset.i18n;
       el.textContent = translate(key, lang);
